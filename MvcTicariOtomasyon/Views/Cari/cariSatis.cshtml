@@ -1,0 +1,49 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "cariSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Cari Alım Listesi</h2>
+<br />
+<ol class="breadcrumb mb-4" style="background-color: #F0F0F0; padding: 15px; border-radius: 8px">
+    <li class="breadcrumb-item active">Müşteri Adı: @ViewBag.ad</li>
+</ol>
+<table class="table table-hover" style="text-align:center">
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Urun Adı</th>
+            <th>Personel</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam Tutar</th>
+            <th>Tarih</th>
+            <th>Yazdır</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var satisHareket in Model)
+    {
+        <tr>
+            <th>@satisHareket.satisHateketID</th>
+            <td>@satisHareket.Urun.urunAd</td>
+            <td>@satisHareket.Personel.personelAd @satisHareket.Personel.personelSoyad</td>
+            <td>@satisHareket.satisHateketFiyat</td>
+            <td>@satisHareket.satisHateketAdet</td>
+            <td>@satisHareket.satisHateketToplamTutar</td>
+            <th>@satisHareket.satisHateketTarih</th>
+            <td>
+                <a href="" class="btn btn-success">Yazdır</a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+

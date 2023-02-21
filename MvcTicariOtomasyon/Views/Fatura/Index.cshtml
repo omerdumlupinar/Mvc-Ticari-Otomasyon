@@ -1,0 +1,52 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Faturalar Listesi</h2>
+<br />
+<a href="/Fatura/faturaEkle/" class="btn btn-primary" style="margin-bottom:20px;">Yeni Fatura Ekle</a>
+<table class=" table table-hover" style="text-align:center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Seri No</th>
+            <th>Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Toplam</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+
+        </tr>
+    </thead>
+    @foreach (var ftr in Model)
+    {
+
+
+<tr>
+    <th>@ftr.faturaID</th>
+    <td>@ftr.faturaSeriNo</td>
+    <td>@ftr.faturaSıraNo</td>
+    <td>@ftr.faturaVergiDairesi</td>
+    <td>@ftr.faturaTarih.ToShortDateString()</td>
+    <td>@ftr.faturaTarih.ToShortTimeString()</td>
+    <td>@ftr.faturaToplam ₺</td>
+    <td>@ftr.faturaTeslimEden</td>
+    <td>@ftr.faturaTeslimAlan</td>
+    <td> <a href="/Fatura/faturaGetir/@ftr.faturaID" class="btn btn-success">Güncelle</a></td>
+    <td> <a href="/Fatura/faturaDetay/@ftr.faturaID" class="btn btn-info">Detay</a></td>
+</tr>
+
+    }
+
+
+
+</table>
+

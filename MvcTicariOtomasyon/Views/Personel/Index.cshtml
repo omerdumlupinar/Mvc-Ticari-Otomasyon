@@ -1,0 +1,41 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Personel Listesi</h2>
+<br />
+<a href="/Personel/personelEkle/" class="btn btn-primary" style="margin-bottom:20px;">Yeni Personel Ekle</a>
+
+<table class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>Personel ID</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Deparman Adı</th>
+            <th>Görsel</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            @*<th>Satışlar</th>*@
+        </tr>
+    </thead>
+
+    @foreach (var prsnl in Model)
+    {
+<tr>
+    <th>@prsnl.personelID</th>
+    <td>@prsnl.personelAd</td>
+    <td>@prsnl.personelSoyad</td>
+    <td>@prsnl.personelGorsel</td>
+    <td>@prsnl.Departman.departmanAd</td>
+    @*<td> <a href="/Personel/personelSil/@prsnl.personelID" class="btn btn-danger">Sil</a> </td>*@
+    <td> <a href="/Personel/personelGetir/@prsnl.personelID" class="btn btn-success">Güncelle</a></td>
+    <td> <a href="/Personel/personelSatıs/@prsnl.personelID" class="btn btn-warning">Satışlar</a></td>
+</tr>
+    }
+
+</table>
+

@@ -1,0 +1,46 @@
+﻿@model MvcTicariOtomasyon.Models.Sınıflar.SatisHareket
+@{
+    ViewBag.Title = "satisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satiiş Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("satisGuncelle", "Satis", FormMethod.Post))
+{
+    <div class="form form-group">
+        @Html.HiddenFor(x => x.satisHateketID)
+        <label class="form-group">Ürün Adı</label>
+        @Html.DropDownListFor(x => x.urunid, (List<SelectListItem>)ViewBag.u, new { @class = "form form-control" })
+        <br />
+
+        <label class="form-group">Personel</label>
+        @Html.DropDownListFor(x => x.personelid, (List<SelectListItem>)ViewBag.p, new { @class = "form form-control" })
+        <br />
+
+        <label class="form-group">Cari Adı</label>
+        @Html.DropDownListFor(x => x.cariid, (List<SelectListItem>)ViewBag.c, new { @class = "form form-control" })
+        <br />
+        <label class="form-group">Fiyat</label>
+        @Html.TextBoxFor(x => x.satisHateketFiyat, new { @class = "form form-control" })
+        <br />
+        <label class="form-group">Adet</label>
+        @Html.TextBoxFor(x => x.satisHateketAdet, new { @class = "form form-control" })
+        <br />
+        <label class="form-group">Toplam Tutar</label>
+        @Html.TextBoxFor(x => x.satisHateketToplamTutar, new { @class = "form form-control" })
+        <br />
+        <label class="form-group">Toplam Tutar</label>
+        @Html.TextBoxFor(x => x.satisHateketTarih, new { @class = "form form-control" })
+        <br />
+        <button class="btn btn-primary">Satış Güncelle</button>
+
+
+    </div>
+
+}
+
+
+

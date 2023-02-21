@@ -1,0 +1,31 @@
+﻿@model MvcTicariOtomasyon.Models.Sınıflar.Personel
+@{
+    ViewBag.Title = "personelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Personel Ekleme Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    <label class="form-group">Adı</label>
+    @Html.TextBoxFor(x => x.personelAd, new { @class = "form form-control" })
+    <br />
+
+    <label class="form-group">Soyad</label>
+    @Html.TextBoxFor(x => x.personelSoyad, new { @class = "form form-control" })
+    <br />
+
+    <label class="form-group">Kategori</label>
+    @*@Html.TextBoxFor(x => x.departmanid, new { @class = "form form-control" })*@
+    @Html.DropDownListFor(x => x.departmanid, (List<SelectListItem>)ViewBag.departmanAdi, new { @class = "form form-control" })
+    <br />
+
+    <label class="form-group">Görsel</label>
+    @Html.TextBoxFor(x => x.personelGorsel, new { @class = "form form-control" })
+    <br />
+
+    <button class="btn btn-primary">Personel Ekle</button>
+</form>
+
