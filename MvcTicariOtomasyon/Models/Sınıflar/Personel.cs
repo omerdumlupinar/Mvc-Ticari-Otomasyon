@@ -23,6 +23,16 @@ namespace MvcTicariOtomasyon.Models.Sınıflar
         public String personelSoyad { get; set; }
 
 
+        [Column(TypeName ="Varchar")]
+        [StringLength(30)]
+        public String personelAdres { get; set; }
+
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(15)]
+        public String personelTelefon { get; set; }
+
+
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public String personelGorsel { get; set; }

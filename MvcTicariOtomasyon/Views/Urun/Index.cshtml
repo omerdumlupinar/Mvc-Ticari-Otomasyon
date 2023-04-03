@@ -12,16 +12,15 @@
 <table class=" table table-hover">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Ürün</th>
             <th>Marka</th>
             <th>Stok</th>
             <th>Aliş Fiyatı</th>
             <th>Satış Fiyatı</th>
             <th>Kategori</th>
-            <th>Görsel</th>
             <th>Sil</th>
             <th>Güncelle</th>
+            <th>Satışı Yap</th>
         </tr>
     </thead>
     @foreach (var urn in Model)
@@ -29,16 +28,15 @@
 
 
         <tr>
-            <th>@urn.urunID</th>
             <td>@urn.urunAd</td>
             <td>@urn.urunmarka</td>
             <td>@urn.urunStok</td>
             <td>@urn.urunAlisFiyat</td>
             <td>@urn.urunSatisFiyat</td>
             <td>@urn.Kategori.kategoriAd</td>
-            <td>@urn.urunGorsel</td>
             <td> <a href="/Urun/urunSil/@urn.urunID" class="btn btn-danger">Sil</a> </td>
             <td> <a href="/Urun/urunGetir/@urn.urunID" class="btn btn-success">Güncelle</a></td>
+            <td> <a href="/Urun/urunSatis/@urn.urunID" class="btn btn-warning">Satışını Yap</a></td>
         </tr>
 
     }

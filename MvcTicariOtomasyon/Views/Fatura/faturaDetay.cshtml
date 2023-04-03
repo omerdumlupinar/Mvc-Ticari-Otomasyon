@@ -8,7 +8,16 @@
 <br />
 <h2>Fatura Kalem Listesi</h2>
 <br />
-<a href="/Fatura/faturaKalemEkle/" class="btn btn-success">Yeni Fatura Kalem Ekle</a>
+
+
+
+<ol class="breadcrumb mb-4" style="background-color: #F0F0F0; padding: 15px; border-radius: 8px">
+    <li class="breadcrumb-item active">Seri & Sıra No: @ViewBag.gelenSeri&nbsp;@ViewBag.gelenSira </li>
+</ol>
+
+
+
+<a href="/Fatura/faturaKalemEkle/@ViewBag.gelenID" class="btn btn-success">Yeni Fatura Kalem Ekle</a>
 <table class="table table-hover" style="text-align:center">
     <thead>
         <tr>

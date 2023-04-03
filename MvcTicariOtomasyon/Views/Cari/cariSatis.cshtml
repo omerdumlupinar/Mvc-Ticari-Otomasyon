@@ -16,34 +16,30 @@
     <thead>
 
         <tr>
-            <th>ID</th>
             <th>Urun Adı</th>
             <th>Personel</th>
             <th>Fiyat</th>
             <th>Adet</th>
             <th>Toplam Tutar</th>
             <th>Tarih</th>
-            <th>Yazdır</th>
-
+            <th>Saat</th>
         </tr>
     </thead>
 
     @foreach (var satisHareket in Model)
     {
         <tr>
-            <th>@satisHareket.satisHateketID</th>
             <td>@satisHareket.Urun.urunAd</td>
             <td>@satisHareket.Personel.personelAd @satisHareket.Personel.personelSoyad</td>
             <td>@satisHareket.satisHateketFiyat</td>
             <td>@satisHareket.satisHateketAdet</td>
             <td>@satisHareket.satisHateketToplamTutar</td>
-            <th>@satisHareket.satisHateketTarih</th>
-            <td>
-                <a href="" class="btn btn-success">Yazdır</a>
-            </td>
+            <th>@satisHareket.satisHateketTarih.ToShortDateString()</th>
+            <th>@satisHareket.satisHateketTarih.ToShortTimeString()</th>
         </tr>
     }
 
 
 </table>
+<a href="" class="btn btn-success">Yazdır</a>
 

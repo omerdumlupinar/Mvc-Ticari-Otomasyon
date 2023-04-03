@@ -1,0 +1,40 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "siparişlerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Cari Sipariş Listesi</h2>
+<br />
+@{ int a = 1;}
+<table class="table text-center" id="tbl1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Urun Adı</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam Tutar</th>
+            <th>Tarih</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var satisHareket in Model)
+    {
+        
+        <tr>
+            <th>@a  @{a++;}</th>
+            <td>@satisHareket.Urun.urunAd</td>
+            <td>@satisHareket.satisHateketFiyat</td>
+            <td>@satisHareket.satisHateketAdet</td>
+            <td>@satisHareket.satisHateketToplamTutar</td>
+            <td>@satisHareket.satisHateketTarih</td>
+        </tr>
+    }
+
+
+</table>
+
+

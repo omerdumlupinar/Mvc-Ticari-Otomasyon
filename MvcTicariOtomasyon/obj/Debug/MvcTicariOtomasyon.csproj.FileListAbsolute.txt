@@ -81,3 +81,7 @@ D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\obj\Debug\MvcTicariOtomasyon.c
 D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\obj\Debug\MvcTicariOtomasyon.dll
 D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\obj\Debug\MvcTicariOtomasyon.pdb
 D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\obj\Debug\MvcTicariOtomasyon.csproj.AssemblyReference.cache
+D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\bin\PagedList.dll
+D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\bin\PagedList.Mvc.dll
+D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\bin\PagedList.xml
+D:\MvcProje\MvcTicariOtomasyon\MvcTicariOtomasyon\bin\PagedList.Mvc.xml

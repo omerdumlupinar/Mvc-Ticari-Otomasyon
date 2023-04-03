@@ -12,29 +12,24 @@
 <table class="table table-hover text-center">
     <thead>
         <tr>
-            <th>Personel ID</th>
-            <th>Adı</th>
-            <th>Soyadı</th>
+            <th>Adı Soyadı</th>
             <th>Deparman Adı</th>
             <th>Görsel</th>
-            <th>Sil</th>
             <th>Güncelle</th>
-            @*<th>Satışlar</th>*@
+            <th>Satışlar</th>
         </tr>
     </thead>
 
     @foreach (var prsnl in Model)
     {
-<tr>
-    <th>@prsnl.personelID</th>
-    <td>@prsnl.personelAd</td>
-    <td>@prsnl.personelSoyad</td>
-    <td>@prsnl.personelGorsel</td>
-    <td>@prsnl.Departman.departmanAd</td>
-    @*<td> <a href="/Personel/personelSil/@prsnl.personelID" class="btn btn-danger">Sil</a> </td>*@
-    <td> <a href="/Personel/personelGetir/@prsnl.personelID" class="btn btn-success">Güncelle</a></td>
-    <td> <a href="/Personel/personelSatıs/@prsnl.personelID" class="btn btn-warning">Satışlar</a></td>
-</tr>
+        <tr>
+            <td>@prsnl.personelAd @prsnl.personelSoyad</td>
+            <td> <img src="@prsnl.personelGorsel" style="width:50px; height:50px;" /> </td>
+            <td>@prsnl.Departman.departmanAd</td>
+            @*<td> <a href="/Personel/personelSil/@prsnl.personelID" class="btn btn-danger">Sil</a> </td>*@
+            <td> <a href="/Personel/personelGetir/@prsnl.personelID" class="btn btn-success">Güncelle</a></td>
+            <td> <a href="/Personel/personelSatıs/@prsnl.personelID" class="btn btn-warning">Satışlar</a></td>
+        </tr>
     }
 
 </table>

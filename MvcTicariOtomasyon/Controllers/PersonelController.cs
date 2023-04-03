@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcTicariOtomasyon.Models.Sınıflar;
+using System.IO;
 
 namespace MvcTicariOtomasyon.Controllers
 {
@@ -32,6 +33,17 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult personelEkle(Personel p)
         {
+
+
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.personelGorsel = "/image/" + dosyaAdi + uzanti;
+            }
+
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -55,7 +67,24 @@ namespace MvcTicariOtomasyon.Controllers
 
         public ActionResult personelGuncelle(Personel p)
         {
+
             var personelbul = c.Personels.Find(p.personelID);
+
+
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.personelGorsel = "/image/" + dosyaAdi + uzanti;
+            }
+
+
+
+
+
+            
             personelbul.personelAd = p.personelAd;
             personelbul.personelSoyad = p.personelSoyad;
             personelbul.personelGorsel = p.personelGorsel;
@@ -66,10 +95,16 @@ namespace MvcTicariOtomasyon.Controllers
 
         public ActionResult personelSatıs(int id)
         {
-            var prsnlsts = c.SatisHarekets.Where(x=>x.personelid==id).ToList();
+            var prsnlsts = c.SatisHarekets.Where(x => x.personelid == id).ToList();
             var prsnlad = c.SatisHarekets.Where(x => x.personelid == id).Select(x => x.Personel.personelAd + " " + x.Personel.personelSoyad).FirstOrDefault();
             ViewBag.ad = prsnlad;
             return View(prsnlsts);
+        }
+
+        public ActionResult PersonelListe()
+        {
+            var degerler = c.Personels.ToList();
+            return View(degerler);
         }
     }
 }

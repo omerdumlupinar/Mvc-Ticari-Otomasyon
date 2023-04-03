@@ -24,7 +24,7 @@ namespace MvcTicariOtomasyon.Controllers
             List<SelectListItem> cri = (from x in c.Carilers.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.cariAd,
+                                               Text = x.cariAd+" "+x.cariSoyad,
                                                Value = x.cariID.ToString()
                                            }).ToList() ;
 
@@ -32,14 +32,14 @@ namespace MvcTicariOtomasyon.Controllers
             List<SelectListItem> prsnl = (from x in c.Personels.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.personelAd+" "+x.personelSoyad,
+                                               Text = x.personelAd+" "+x.personelSoyad+"  (Departmanı: " + x.Departman.departmanAd + ")",
                                                Value = x.personelID.ToString()
                                            }).ToList();
 
             List<SelectListItem> urn = (from x in c.Uruns.Where(x=>x.urunStok>0).ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.urunAd,
+                                               Text = x.urunAd+"    (Markası: "+x.urunmarka+")",
                                                Value = x.urunID.ToString()
                                            }).ToList();
 
@@ -60,7 +60,7 @@ namespace MvcTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult satisYap(SatisHareket s)
         {
-            s.satisHateketTarih = DateTime.Parse(DateTime.Now.ToLongTimeString());
+            s.satisHateketTarih = DateTime.Parse(DateTime.Now.ToString());
             c.SatisHarekets.Add(s);
             c.SaveChanges();
             return RedirectToAction("Index");

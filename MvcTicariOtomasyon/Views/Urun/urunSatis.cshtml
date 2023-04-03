@@ -1,0 +1,58 @@
+﻿@model MvcTicariOtomasyon.Models.Sınıflar.SatisHareket
+
+@{
+    ViewBag.Title = "urunSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<h2>Yeni Satış Sayfası</h2>
+<br />
+<form class="form form-group" method="post">
+
+    @*<label class="form-group">Ürün Adı</label>
+        @Html.DropDownListFor(x => x.urunid, (List<SelectListItem>)ViewBag.u, new { @class = "form form-control" })
+        <br />*@
+
+    <label class="form-group">Personel</label>
+    @Html.DropDownListFor(x => x.personelid, (List<SelectListItem>)ViewBag.p, new { @class = "form form-control" })
+    <br />
+
+    <label class="form-group">Cari Adı</label>
+    @Html.DropDownListFor(x => x.cariid, (List<SelectListItem>)ViewBag.c, new { @class = "form form-control" })
+    <br />
+
+
+    <label class="form-group">Fiyat</label>
+    <input type="text" name="satisHateketFiyat" id="fiyat" onkeyup="sum();" value="@ViewBag.fyt" class="form-control" />
+    <br />
+
+
+    <label class="form-group">Adet</label>
+    <input type="number" name="satisHateketAdet" id="adet" onchange="sum();" max="10" min="1" class="form-control"  />
+    <br />
+
+
+    <label class="form-group">Toplam Tutar</label>
+    <input type="text" name="satisHateketToplamTutar" id="toplam" value="0" readonly class="form-control" />
+    <br />
+
+
+    <button class="btn btn-primary">Satış Onayla</button>
+
+
+    <script>
+        function sum() {
+            var sayi1 = document.getElementById('fiyat').value;
+            var sayi2 = document.getElementById('adet').value;
+            var sonuc = parseInt(sayi1) * parseInt(sayi2);
+            if (!isNaN(sonuc)){
+                document.getElementById('toplam').value = sonuc;
+            }
+        }
+    </script>
+
+
+
+
+</form>

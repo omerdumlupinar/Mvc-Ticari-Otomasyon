@@ -10,23 +10,19 @@
 <a href="/Cari/cariEkle/" class="btn btn-primary" style="margin-top:20px;">Yeni Cari Ekle</a>
 <table class="table table-bordered" style="margin-top:20px; text-align:center">
     <tr>
-        <th>ID</th>
-        <th>Adı</th>
-        <th>Soyad</th>
+        <th>Adı Soyadı</th>
+        <th></th>
         <th>Şehir</th>
         <th>Mail</th>
         <th>Sil</th>
         <th>Güncelle</th>
-        <th>Detay</th>
     </tr>
 
     @foreach (var cr in Model)
     {
 
         <tr>
-            <th>@cr.cariID</th>
-            <td>@cr.cariAd</td>
-            <td>@cr.cariSoyad</td>
+            <td>@cr.cariAd @cr.cariSoyad</td>
             <td>@cr.cariSehir</td>
             <td>@cr.cariMail</td>
             <td> <a href="/Cari/cariSil/@cr.cariID" class="btn btn-danger">Sil</a> </td>

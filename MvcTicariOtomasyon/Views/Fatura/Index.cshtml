@@ -12,17 +12,14 @@
 <table class=" table table-hover" style="text-align:center">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Seri No</th>
-            <th>Sıra No</th>
+            <th>Seri & Sıra No</th>
             <th>Vergi Dairesi</th>
             <th>Tarih</th>
             <th>Saat</th>
             <th>Toplam</th>
-            <th>Teslim Eden</th>
-            <th>Teslim Alan</th>
+
             <th>Güncelle</th>
-            <th>Detay</th>
+            <th>Fatura Kalemleri</th>
 
         </tr>
     </thead>
@@ -30,23 +27,69 @@
     {
 
 
-<tr>
-    <th>@ftr.faturaID</th>
-    <td>@ftr.faturaSeriNo</td>
-    <td>@ftr.faturaSıraNo</td>
-    <td>@ftr.faturaVergiDairesi</td>
-    <td>@ftr.faturaTarih.ToShortDateString()</td>
-    <td>@ftr.faturaTarih.ToShortTimeString()</td>
-    <td>@ftr.faturaToplam ₺</td>
-    <td>@ftr.faturaTeslimEden</td>
-    <td>@ftr.faturaTeslimAlan</td>
-    <td> <a href="/Fatura/faturaGetir/@ftr.faturaID" class="btn btn-success">Güncelle</a></td>
-    <td> <a href="/Fatura/faturaDetay/@ftr.faturaID" class="btn btn-info">Detay</a></td>
-</tr>
+        <tr>
+            <td>@ftr.faturaSeriNo   @ftr.faturaSıraNo</td>
+            <td>@ftr.faturaVergiDairesi</td>
+            <td>@ftr.faturaTarih.ToShortDateString()</td>
+            <td>@ftr.faturaTarih.ToShortTimeString()</td>
+            <td>@ftr.faturaToplam ₺</td>
+            <td> <a href="/Fatura/faturaGetir/@ftr.faturaID" class="btn btn-success">Güncelle</a></td>
+            <td> <a href="/Fatura/faturaDetay/@ftr.faturaID" class="btn btn-info">Fatura Kalemleri</a></td>
+            <td> </td>
+        </tr>
 
     }
 
 
 
 </table>
+
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Faturalar Popup</button>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Fatura Listesi</h2>
+            </div>
+            <div class="modal-body">
+                <table class=" table table-hover" style="text-align:center">
+                    <thead>
+                        <tr>
+                            <th>Seri & Sıra No</th>
+                            <th>Vergi Dairesi</th>
+                            <th>Tarih</th>
+                            <th>Saat</th>
+                            <th>Toplam</th>
+                            <th>Teslim Eden</th>
+                            <th>Teslim Alan</th>
+                        </tr>
+                    </thead>
+                    @foreach (var ftr in Model)
+                    {
+                        <tr>
+                            <td>@ftr.faturaSeriNo   @ftr.faturaSıraNo</td>
+                            <td>@ftr.faturaVergiDairesi</td>
+                            <td>@ftr.faturaTarih.ToShortDateString()</td>
+                            <td>@ftr.faturaTarih.ToShortTimeString()</td>
+                            <td>@ftr.faturaToplam ₺</td>
+                            <td>@ftr.faturaTeslimEden</td>
+                            <td>@ftr.faturaTeslimAlan </td>
+
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 

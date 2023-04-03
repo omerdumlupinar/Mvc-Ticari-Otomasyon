@@ -12,6 +12,14 @@
     @Html.TextBoxFor(x => x.kategoriAd, new { @class = "form form-control" })
 
     <br />
-    <button class="btn btn-primary">Kategori Ekle</button>  
+    <button class="btn btn-primary" id="btn1">Kategori Ekle</button>
+    
+    <script>
+        $('#btn1').click(function () {
+            alert("Yeni kategori başarılı bir şekilde eklendi.")
+        });
+
+    </script>
+
 </form>
 

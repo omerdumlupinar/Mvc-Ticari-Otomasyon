@@ -3,21 +3,27 @@
     ViewBag.Title = "kategoriGetir";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <br />
 <h2> Kategori Güncelleme Sayfası</h2>
 <br />
 
 @using (Html.BeginForm("kategoriGuncelle", "Kategori", FormMethod.Post))
 {
-    <div class="form form-group">
-        @Html.LabelFor(x => x.kategoriAd)
-        @Html.TextBoxFor(x => x.kategoriAd, new { @class = "form form-control" })
-        @Html.HiddenFor(x => x.kategoriID)
-        <br />
-        <button class="btn btn-warning">Güncelle</button>
+<div class="form form-group">
+    @Html.LabelFor(x => x.kategoriAd)
+    @Html.TextBoxFor(x => x.kategoriAd, new { @class = "form form-control" })
+    @Html.HiddenFor(x => x.kategoriID)
+    <br />
+    <button class="btn btn-warning" id="btn1">Güncelle</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Kategori Güncelleme İşlemi Başarılı.")
+        });
 
-    </div>
+    </script>
+
+</div>
 
 
 }

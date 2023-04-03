@@ -5,21 +5,29 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
+
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<link href="~/startbootstrap/css/styles.css" rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+
+
+
+
 <br />
-<h2>Satış Hareketi</h2>
+<h2>Yapılan Satış Listesi</h2>
 <br />
+@*<a href="/Satis/satisYap/" class="btn btn-primary" style="margin-bottom:40px;">Yeni Satiş Yap</a>*@
 
 <table class="table text-center" id="tbl1">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Urun Adı</th>
             <th>Cari Adı</th>
             <th>Fiyat</th>
             <th>Adet</th>
             <th>Toplam Tutar</th>
-            <th>Tarih</th>
-            <th>Personel Adı</th>
+           
             <th>Güncelle</th>
             <th>Detay</th>
 
@@ -28,29 +36,24 @@
 
     @foreach (var satisHareket in Model)
     {
-        <tr>
-            <th>@satisHareket.satisHateketID</th>
-            <td>@satisHareket.Urun.urunAd</td>
-            <td>@satisHareket.Cariler.cariAd @satisHareket.Cariler.cariSoyad</td>
-            <td>@satisHareket.satisHateketFiyat</td>
-            <td>@satisHareket.satisHateketAdet</td>
-            <td>@satisHareket.satisHateketToplamTutar</td>
-            <td>@satisHareket.satisHateketTarih</td>
-            <th>@satisHareket.Personel.personelAd @satisHareket.Personel.personelSoyad</th>
-            <td>
-                <a href="/Satis/satisGetir/@satisHareket.satisHateketID" class="btn btn-warning">Güncelle</a>
-            </td>
-            <td>
-                <a href="/Satis/satisDetay/@satisHareket.satisHateketID" class="btn btn-success">İşlemler</a>
-            </td>
-        </tr>
+<tr>
+    <td>@satisHareket.Urun.urunAd</td>
+    <td>@satisHareket.Cariler.cariAd @satisHareket.Cariler.cariSoyad</td>
+    <td>@satisHareket.satisHateketFiyat ₺</td>
+    <td>@satisHareket.satisHateketAdet</td>
+    <td>@satisHareket.satisHateketToplamTutar ₺</td>
+    
+    <td>
+        <a href="/Satis/satisGetir/@satisHareket.satisHateketID" class="btn btn-warning">Güncelle</a>
+    </td>
+    <td>
+        <a href="/Satis/satisDetay/@satisHareket.satisHateketID" class="btn btn-success">Satış Detayı</a>
+    </td>
+</tr>
     }
 
 
 </table>
-
-<a href="/Satis/satisYap/" class="btn btn-primary" style="margin-bottom:20px;">Yeni Satiş Yap</a>
-
 
 
 @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
@@ -70,4 +73,3 @@
     $('#tbl1').dataTable({});
 
 </script>
-

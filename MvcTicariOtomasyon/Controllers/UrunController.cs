@@ -13,7 +13,7 @@ namespace MvcTicariOtomasyon.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var urunlist = c.Uruns.Where(x => x.urunDurum == true ).ToList();
+            var urunlist = c.Uruns.Where(x => x.urunDurum == true).ToList();
             return View(urunlist);
         }
 
@@ -68,7 +68,7 @@ namespace MvcTicariOtomasyon.Controllers
 
 
 
-            var urundeger = c.Uruns.Find(id);   
+            var urundeger = c.Uruns.Find(id);
             return View("UrunGetir", urundeger);
 
         }
@@ -97,9 +97,50 @@ namespace MvcTicariOtomasyon.Controllers
             return View(list);
         }
 
+        [HttpGet]
+        public ActionResult urunSatis(int id)
+        {
+            List<SelectListItem> cri = (from x in c.Carilers.ToList()
+                                        select new SelectListItem
+                                        {
+                                            Text = x.cariAd+" "+x.cariSoyad,
+                                            Value = x.cariID.ToString()
+                                        }).ToList();
+
+
+            List<SelectListItem> prsnl = (from x in c.Personels.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.personelAd + " " + x.personelSoyad,
+                                              Value = x.personelID.ToString()
+                                          }).ToList();
+
+            ViewBag.c = cri;
+            ViewBag.p = prsnl;
+
+
+            var fiyat = c.Uruns.Where(x => x.urunID == id).Select(x => x.urunSatisFiyat).FirstOrDefault();
+
+            ViewBag.fyt = fiyat;
+
+
+
+            return View("urunSatis");
+        }
+
+        [HttpPost]
+        public ActionResult urunSatis(SatisHareket s,int id)
+        {
+            s.satisHateketTarih = DateTime.Parse(DateTime.Now.ToString());
+            s.urunid = id;
+            c.SatisHarekets.Add(s);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
 
     }
 
-    
+
 }

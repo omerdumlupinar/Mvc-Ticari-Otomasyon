@@ -11,29 +11,32 @@
 
 @using (Html.BeginForm("faturaGuncelle", "Fatura", FormMethod.Post))
 {
-    <div class="form form-group">
-        @Html.HiddenFor(x => x.faturaID)
-        <label>SeriNo</label>
-        @Html.TextBoxFor(x => x.faturaSeriNo, new { @class = "form-control" })
-        <br />
-        <label>SıraNo</label>
-        @Html.TextBoxFor(x => x.faturaSıraNo, new { @class = "form-control" })
-        <br />
-        <label>Toplam</label>
-        @Html.TextBoxFor(x => x.faturaToplam, new { @class = "form-control" })
-        <br />
-        <label>Vergi Dairesi</label>
-        @Html.TextBoxFor(x => x.faturaVergiDairesi, new { @class = "form-control" })
-        <br />
-        <label>Teslim Eden</label>
-        @Html.TextBoxFor(x => x.faturaTeslimEden, new { @class = "form-control" })
-        <br />
-        <label>Teslim Alan</label>
-        @Html.TextBoxFor(x => x.faturaTeslimAlan, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-warning">Güncelle</button>
+<div class="form form-group">
+    @Html.HiddenFor(x => x.faturaID)
+    <label>SeriNo</label>
+    @Html.TextBoxFor(x => x.faturaSeriNo, new { @class = "form-control" })
+    <br />
+    <label>SıraNo</label>
+    @Html.TextBoxFor(x => x.faturaSıraNo, new { @class = "form-control" })
+    <br />
+    <label>Toplam</label>
+    @Html.TextBoxFor(x => x.faturaToplam, new { @class = "form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(x => x.faturaVergiDairesi, new { @class = "form-control" })
+    <br />
+    <label>Teslim Eden</label>
+    @Html.TextBoxFor(x => x.faturaTeslimEden, new { @class = "form-control" })
+    <br />
+    <label>Teslim Alan</label>
+    @Html.TextBoxFor(x => x.faturaTeslimAlan, new { @class = "form-control" })
+    <br />
+    <label>Fatura Kesim Tarihi(Gün.Ay.Yıl / Saat:Dakika:Salise)</label>
+    @Html.TextBoxFor(x => x.faturaTarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
 
-    </div>
+</div>
 
 
 }

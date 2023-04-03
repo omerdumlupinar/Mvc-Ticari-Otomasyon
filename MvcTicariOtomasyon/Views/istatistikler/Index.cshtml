@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">İstatistikler</h1>
+    <ol class="breadcrumb mb-4" style="background-color: #F0F0F0; padding: 15px; border-radius: 8px">
+        
+        <li class="breadcrumb-item active">İstatistikler</li>
+    </ol>
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #cd84f1;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.cari</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Toplam Cari</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #ffb8b8;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.urun</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Ürün Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4 " style="background-color: #8e44ad;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.person</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Personel Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #fff200;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.ktgr</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Kategori Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #f1c40f;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.urunSTK</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Toplam Stok</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #e67e22;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.marka</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Marka Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4 " style="background-color: #e74c3c;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.kritik</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Kritik Seviye</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #95a5a6;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.max</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Max Fiyat Ürün</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #16a085;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.min</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Min Fiyat Ürün</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #27ae60;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.mxMarka</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Max Marka</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4 " style="background-color: #2980b9;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.bDolabıSayisi</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Buzdolabı Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #8e44ad;">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.lptpSayisi</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Leptop Sayısı</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #474787; ">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.enSatan</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">En Çok Satan</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #ffb142; ">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.kasaToplam</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Kasadaki Tutar</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4 " style="background-color: #cd6133; ">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.bugunSatis</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Bugünkü Satışlar</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card text-white mb-4" style="background-color: #b33939; ">
+                <div class="card-body text-center" style="font-size:25pt">@ViewBag.bugunToplam</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link" href="#" style="font-size:15pt; text-decoration:none">Bugünkü Kasa</a>
+                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
